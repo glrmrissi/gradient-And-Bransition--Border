@@ -1,12 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
 }
-
-
-
-
 
 .stylization {
     display: flex;
@@ -14,36 +13,48 @@
     justify-content: center;
     height: 100vh;
     width: 100%vw;
-    background-image: -moz-linear-gradient(-45deg,#997D8C, #b985b9, #806a88,#9386A3);
+    background-image: linear-gradient(-45deg,#ff0088, #964396, #744585,#594b6b);
     background-size: 300% 300%;
     animation: colors 15s ease infinite;
 }
 
-.text {
-    border-bottom: 7px solid #fff;
-    border-radius: 5px;
+/* after-And-Hover-Cake */
+
+.text a {
+    position: relative;
     color: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    font-size: 4em;
+    font-weight: 600;
+    font-size: 5em;
     text-decoration: none;
 }
 
-.text :hover {
+.text a::after {
+    content: "";
+    bottom: 9px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #b985b9;
+    border-radius: 6px;
+    transform-origin: right;
+    transition:transform 1s;
+    transform: scaleX(0);
+}
+
+.text a:hover {
     color: #b985b9;
-    transition: 500ms;
-}
-
-.text-Style {
-    border-bottom: 7px solid #fff;
-    border-radius: 5px;
-}
-
-.text-Style :hover {
-    color: #000;
-    transition: 500ms;
     transform-origin: left;
+    transition: 1s;
 }
+.text a:hover::after {
+    color: #fff;
+    transform-origin: left;
+    transition:transform 1s;
+    transform: scaleX(1);
+}
+
+/* keyframes-Background-Colors */
 
 @keyframes colors {
     0%  {
